@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ใช้งาน Google Apps Script ผ่าน GitHub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  
+  <title>แอ๊บแอ้</title>
+
+  <!-- Open Graph สำหรับ Share Sheet -->
+  <meta property="og:title" content="แอ๊บแอ้">
+  <meta property="og:site_name" content="แอ๊บแอ้">
+  <meta name="title" content="แอ๊บแอ้">
+
+  <!-- บังคับให้เป็น App เต็มจอ (Standalone / Fullscreen) 100% -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="แอ๊บแอ้">
+  <meta name="theme-color" content="#f5f5f7">
+
+  <!-- โลโก้และ Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmYwMDdmIi8+PHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjc1OGMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmN2ViMyIvPjxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjN2FmY2ZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZjljIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMjAiIGZpbGw9InVybCgjYmcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTEwKSI+PHBhdGggZD0iTSAxNTYgMjAwIEEgMTAwIDEwMCAwIDAgMSAzNTYgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gMTk2IDIwMCBBIDYwIDYwIDAgMCAxIDMxNiAyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgiLz48dGV4dCB4PSIyNTYiIHk9IjMyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5BQi1BRTwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iNTUiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPuC5geC4reC5iuC4muC5geC4reC5iTwvdGV4dD48L2c+PC9zdmc+">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmYwMDdmIi8+PHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjc1OGMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmN2ViMyIvPjxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjN2FmY2ZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZjljIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMjAiIGZpbGw9InVybCgjYmcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTEwKSI+PHBhdGggZD0iTSAxNTYgMjAwIEEgMTAwIDEwMCAwIDAgMSAzNTYgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gMTk2IDIwMCBBIDYwIDYwIDAgMCAxIDMxNiAyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgiLz48dGV4dCB4PSIyNTYiIHk9IjMyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5BQi1BRTwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iNTUiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPuC5geC4reC5iuC4muC5geC4reC5iTwvdGV4dD48L2c+PC9zdmc+">
+  <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22%E0%B9%81%E0%B8%AD%E0%B9%8A%E0%B8%9A%E0%B9%81%E0%B8%AD%E0%B9%89%22%2C%22short_name%22%3A%22%E0%B9%81%E0%B8%AD%E0%B9%8A%E0%B8%9A%E0%B9%81%E0%B8%AD%E0%B9%89%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f5f5f7%22%2C%22theme_color%22%3A%22%23ff007f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmYwMDdmIi8+PHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjc1OGMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmN2ViMyIvPjxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjN2FmY2ZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZjljIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMjAiIGZpbGw9InVybCgjYmcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTEwKSI+PHBhdGggZD0iTSAxNTYgMjAwIEEgMTAwIDEwMCAwIDAgMSAzNTYgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gMTk2IDIwMCBBIDYwIDYwIDAgMCAxIDMxNiAyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgiLz48dGV4dCB4PSIyNTYiIHk9IjMyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5BQi1BRTwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iNTUiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPuC5geC4reC5iuC4muC5geC4reC5iTwvdGV4dD48L2c+PC9zdmc+%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      width: 100vw; height: 100vh;
+      background-color: #f2f2f7;
+      overflow: hidden;
+      font-family: -apple-system, Roboto, sans-serif;
+    }
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+      border: none !important;
+      display: block !important;
+    }
+  </style>
 </head>
 <body>
-    <h1>ทดสอบเรียกข้อมูลจาก Google Apps Script</h1>
-    <button id="loadDataBtn">ดึงข้อมูล</button>
-    <div id="result" style="margin-top: 20px; color: blue;"></div>
 
-    <script>
-        // เอา URL /exec ของคุณมาใส่ที่นี่
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycbzzh8AxVE4gW8WN5OTi4c3no3g52Skbcm85rcsq45amr9pkzD8pj089L2kIyCHhYM5Kxw/exec';
+  <iframe id="app-frame" allow="autoplay; camera; focus-without-user-activation"></iframe>
 
-        document.getElementById('loadDataBtn').addEventListener('click', () => {
-            document.getElementById('result').innerText = "กำลังโหลดข้อมูล...";
-            
-            fetch(scriptUrl)
-                .then(response => response.text()) // หรือ response.json() ถ้า Apps script ส่งคืนมาเป็น JSON
-                .then(data => {
-                    document.getElementById('result').innerText = "ผลลัพธ์: " + data;
-                })
-                .catch(error => {
-                    document.getElementById('result').innerText = "เกิดข้อผิดพลาด: " + error;
-                });
-        });
-    </script>
+  <script>
+    const GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycby-ApQEa-dgWIjg0KLVhQXV3PNVDk_flR4QeQgQiAenW7xoPe75M_HJhMPdj9gGftp0xg/exec";
+
+    // ล็อคชื่อ Title บนเบราว์เซอร์
+    document.title = "แอ๊บแอ้";
+    setInterval(function() {
+      document.title = "แอ๊บแอ้";
+    }, 1000);
+
+    window.onload = function() {
+      loadApp();
+    };
+
+    function loadApp() {
+      let savedBranch = localStorage.getItem("f16_device_branch");
+      let savedStaff = localStorage.getItem("f16_device_staff");
+
+      let targetUrl = GAS_EXEC_URL;
+      let connector = targetUrl.includes('?') ? '&' : '?';
+
+      if (savedBranch) {
+        targetUrl += connector + "reg=true&branch=" + encodeURIComponent(savedBranch);
+        if (savedStaff) {
+          targetUrl += "&staff=" + encodeURIComponent(savedStaff);
+        }
+      }
+
+      let cacheConnector = targetUrl.includes('?') ? '&' : '?';
+      document.getElementById("app-frame").src = targetUrl + cacheConnector + "_nocache=" + Date.now();
+    }
+
+    // รับ Event ข้าม Origin จาก Google Apps Script
+    window.addEventListener("message", function(event) {
+      if (event.data && event.data.action) {
+        if (event.data.action === "save_all") {
+          if (event.data.branch) localStorage.setItem("f16_device_branch", event.data.branch);
+          if (event.data.staff) localStorage.setItem("f16_device_staff", event.data.staff);
+        } else if (event.data.action === "logout_staff") {
+          localStorage.removeItem("f16_device_staff");
+          loadApp(); // รีโหลด iframe ใหม่เมื่อล็อกเอาท์
+        }
+      }
+    });
+  </script>
 </body>
 </html>
