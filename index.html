@@ -1,92 +1,97 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  
-  <title>แอ๊บแอ้</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <title>แอ๊บแอ้</title>
 
-  <!-- Open Graph สำหรับ Share Sheet -->
-  <meta property="og:title" content="แอ๊บแอ้">
-  <meta property="og:site_name" content="แอ๊บแอ้">
-  <meta name="title" content="แอ๊บแอ้">
+    <!-- 🇹🇭 Open Graph สำหรับ iOS Share Sheet -->
+    <meta property="og:title" content="แอ๊บแอ้">
+    <meta property="og:site_name" content="แอ๊บแอ้">
+    <meta name="title" content="แอ๊บแอ้">
 
-  <!-- บังคับให้เป็น App เต็มจอ (Standalone / Fullscreen) 100% -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="แอ๊บแอ้">
-  <meta name="theme-color" content="#f5f5f7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- 🍎 ชื่อบน iOS (iPhone/iPad) -->
+    <meta name="apple-mobile-web-app-title" content="แอ๊บปริ้น">
+    
+    <meta name="theme-color" content="#ff007f">
 
-  <!-- โลโก้และ Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmYwMDdmIi8+PHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjc1OGMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmN2ViMyIvPjxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjN2FmY2ZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZjljIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMjAiIGZpbGw9InVybCgjYmcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTEwKSI+PHBhdGggZD0iTSAxNTYgMjAwIEEgMTAwIDEwMCAwIDAgMSAzNTYgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gMTk2IDIwMCBBIDYwIDYwIDAgMCAxIDMxNiAyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgiLz48dGV4dCB4PSIyNTYiIHk9IjMyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5BQi1BRTwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iNTUiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPuC5geC4reC5iuC4muC5geC4reC5iTwvdGV4dD48L2c+PC9zdmc+">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmYwMDdmIi8+PHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjc1OGMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmN2ViMyIvPjxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjN2FmY2ZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZjljIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMjAiIGZpbGw9InVybCgjYmcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTEwKSI+PHBhdGggZD0iTSAxNTYgMjAwIEEgMTAwIDEwMCAwIDAgMSAzNTYgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gMTk2IDIwMCBBIDYwIDYwIDAgMCAxIDMxNiAyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgiLz48dGV4dCB4PSIyNTYiIHk9IjMyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5BQi1BRTwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iNTUiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPuC5geC4reC5iuC4muC5geC4reC5iTwvdGV4dD48L2c+PC9zdmc+">
-  <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22%E0%B9%81%E0%B8%AD%E0%B9%8A%E0%B8%9A%E0%B9%81%E0%B8%AD%E0%B9%89%22%2C%22short_name%22%3A%22%E0%B9%81%E0%B8%AD%E0%B9%8A%E0%B8%9A%E0%B9%81%E0%B8%AD%E0%B9%89%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f5f5f7%22%2C%22theme_color%22%3A%22%23ff007f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmYwMDdmIi8+PHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiNmZjc1OGMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ZmN2ViMyIvPjxzdG9wIG9mZnNldD0iNzAlIiBzdG9wLWNvbG9yPSIjN2FmY2ZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmVmZjljIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMjAiIGZpbGw9InVybCgjYmcpIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTEwKSI+PHBhdGggZD0iTSAxNTYgMjAwIEEgMTAwIDEwMCAwIDAgMSAzNTYgMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gMTk2IDIwMCBBIDYwIDYwIDAgMCAxIDMxNiAyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgiLz48dGV4dCB4PSIyNTYiIHk9IjMyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5BQi1BRTwvdGV4dD48dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iNTUiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPuC5geC4reC5iuC4muC5geC4reC5iTwvdGV4dD48L2c+PC9zdmc+%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+    <!-- 🌈 1. โลโก้สายรุ้ง Gen Z / LGBT พาสเทล สำหรับ iOS (Apple Touch Icon) -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23ff007f'/><stop offset='20%' stop-color='%23ff758c'/><stop offset='40%' stop-color='%23ff7eb3'/><stop offset='70%' stop-color='%237afcff'/><stop offset='100%' stop-color='%23feff9c'/></linearGradient></defs><rect width='512' height='512' rx='120' fill='url(%23bg)'/><g transform='translate(0, 20)'><path d='M 128 340 A 128 128 0 0 1 384 340' fill='none' stroke='%23ffffff' stroke-width='24' stroke-linecap='round' opacity='0.95'/><path d='M 160 340 A 96 96 0 0 1 352 340' fill='none' stroke='%23ffffff' stroke-width='24' stroke-linecap='round' opacity='0.85'/><path d='M 192 340 A 64 64 0 0 1 320 340' fill='none' stroke='%23ffffff' stroke-width='24' stroke-linecap='round' opacity='0.75'/></g></svg>">
 
-  <style>
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      width: 100vw; height: 100vh;
-      background-color: #f2f2f7;
-      overflow: hidden;
-      font-family: -apple-system, Roboto, sans-serif;
-    }
-    iframe {
-      width: 100% !important;
-      height: 100% !important;
-      border: none !important;
-      display: block !important;
-    }
-  </style>
+    <!-- 🤖 2. Favicon & Manifest สำหรับ Android (โลโก้ LGBT Gen Z) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23ff007f'/><stop offset='20%' stop-color='%23ff758c'/><stop offset='40%' stop-color='%23ff7eb3'/><stop offset='70%' stop-color='%237afcff'/><stop offset='100%' stop-color='%23feff9c'/></linearGradient></defs><rect width='512' height='512' rx='120' fill='url(%23bg)'/><g transform='translate(0, 20)'><path d='M 128 340 A 128 128 0 0 1 384 340' fill='none' stroke='%23ffffff' stroke-width='24' stroke-linecap='round' opacity='0.95'/><path d='M 160 340 A 96 96 0 0 1 352 340' fill='none' stroke='%23ffffff' stroke-width='24' stroke-linecap='round' opacity='0.85'/><path d='M 192 340 A 64 64 0 0 1 320 340' fill='none' stroke='%23ffffff' stroke-width='24' stroke-linecap='round' opacity='0.75'/></g></svg>">
+    
+    <link rel="manifest" href='data:application/manifest+json,{"name":"แอ๊บแอ้","short_name":"แอ๊บแอ้","start_url":".","display":"standalone","background_color":"#f2f2f7","theme_color":"#ff007f","icons":[{"src":"data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><defs><linearGradient id=\"bg\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" stop-color=\"%23ff007f\"/><stop offset=\"20%\" stop-color=\"%23ff758c\"/><stop offset=\"40%\" stop-color=\"%23ff7eb3\"/><stop offset=\"70%\" stop-color=\"%237afcff\"/><stop offset=\"100%\" stop-color=\"%23feff9c\"/></linearGradient></defs><rect width=\"512\" height=\"512\" rx=\"120\" fill=\"url(%23bg)\"/><g transform=\"translate(0, 20)\"><path d=\"M 128 340 A 128 128 0 0 1 384 340\" fill=\"none\" stroke=\"%23ffffff\" stroke-width=\"24\" stroke-linecap=\"round\" opacity=\"0.95\"/><path d=\"M 160 340 A 96 96 0 0 1 352 340\" fill=\"none\" stroke=\"%23ffffff\" stroke-width=\"24\" stroke-linecap=\"round\" opacity=\"0.85\"/><path d=\"M 192 340 A 64 64 0 0 1 320 340\" fill=\"none\" stroke=\"%23ffffff\" stroke-width=\"24\" stroke-linecap=\"round\" opacity=\"0.75\"/></g></svg>","sizes":"512x512","type":"image/svg+xml"}]}'>
+
+    <style>
+        /* ลบขอบและทำให้ iframe เต็มหน้าจอพอดี */
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #f2f2f7; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
+    </style>
 </head>
 <body>
+    
+    <!-- ปล่อย src ให้ว่างไว้ก่อน เดี๋ยว JavaScript จะนำลิงก์มาใส่ให้พร้อมแนบพารามิเตอร์ -->
+    <iframe id="app-frame" allow="autoplay; camera; fullscreen"></iframe>
 
-  <iframe id="app-frame" allow="autoplay; camera; focus-without-user-activation"></iframe>
+    <script>
+        // ลิงก์ Google Apps Script ของคุณ
+        const GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbwRFQ57hEjFnACdw93BMS2sTp3fzpkO2EhpsedFGQ-AiN0BkNvydZr_bj7EhysNHzTy/exec?page=operation";
 
-  <script>
-    const GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycby-ApQEa-dgWIjg0KLVhQXV3PNVDk_flR4QeQgQiAenW7xoPe75M_HJhMPdj9gGftp0xg/exec";
+        // 🔒 ล็อคชื่อ Title บนเบราว์เซอร์
+        document.title = "แอ๊บแอ้";
+        setInterval(function() {
+            document.title = "แอ๊บแอ้";
+        }, 1000);
 
-    // ล็อคชื่อ Title บนเบราว์เซอร์
-    document.title = "แอ๊บแอ้";
-    setInterval(function() {
-      document.title = "แอ๊บแอ้";
-    }, 1000);
+        // โหลดแอปเมื่อหน้าเว็บพร้อม
+        window.onload = function() {
+            loadApp();
+        };
 
-    window.onload = function() {
-      loadApp();
-    };
+        function loadApp() {
+            // ดึงค่าการล็อกอินจากเครื่อง
+            let savedName = localStorage.getItem("holiday_name");
+            let savedId = localStorage.getItem("holiday_id");
+            let savedEmail = localStorage.getItem("holiday_email");
 
-    function loadApp() {
-      let savedBranch = localStorage.getItem("f16_device_branch");
-      let savedStaff = localStorage.getItem("f16_device_staff");
+            let targetUrl = GAS_EXEC_URL;
 
-      let targetUrl = GAS_EXEC_URL;
-      let connector = targetUrl.includes('?') ? '&' : '?';
+            // ถ้ามีประวัติการล็อกอิน ให้แนบพารามิเตอร์ส่งไปให้ Apps Script ด้วย
+            if (savedName && savedId) {
+                // ใช้ & ต่อท้ายเพราะ URL เดิมมี ?page=operation อยู่แล้ว
+                targetUrl += "&name=" + encodeURIComponent(savedName) + 
+                             "&id=" + encodeURIComponent(savedId) + 
+                             "&email=" + encodeURIComponent(savedEmail || '');
+            }
 
-      if (savedBranch) {
-        targetUrl += connector + "reg=true&branch=" + encodeURIComponent(savedBranch);
-        if (savedStaff) {
-          targetUrl += "&staff=" + encodeURIComponent(savedStaff);
+            // นำลิงก์ไปใส่ใน iframe พร้อมใส่ _nocache เพื่อป้องกันการดึงหน้าเก่ามาแสดง
+            document.getElementById("app-frame").src = targetUrl + "&_nocache=" + Date.now();
         }
-      }
 
-      let cacheConnector = targetUrl.includes('?') ? '&' : '?';
-      document.getElementById("app-frame").src = targetUrl + cacheConnector + "_nocache=" + Date.now();
-    }
-
-    // รับ Event ข้าม Origin จาก Google Apps Script
-    window.addEventListener("message", function(event) {
-      if (event.data && event.data.action) {
-        if (event.data.action === "save_all") {
-          if (event.data.branch) localStorage.setItem("f16_device_branch", event.data.branch);
-          if (event.data.staff) localStorage.setItem("f16_device_staff", event.data.staff);
-        } else if (event.data.action === "logout_staff") {
-          localStorage.removeItem("f16_device_staff");
-          loadApp(); // รีโหลด iframe ใหม่เมื่อล็อกเอาท์
-        }
-      }
-    });
-  </script>
+        // 📩 รอรับคำสั่ง (PostMessage) จากฝั่ง Google Apps Script
+        window.addEventListener("message", function(event) {
+            if (event.data && event.data.action) {
+                // เมื่อรับคำสั่งเซฟข้อมูลล็อกอิน
+                if (event.data.action === "save_login") {
+                    localStorage.setItem("holiday_name", event.data.name);
+                    localStorage.setItem("holiday_id", event.data.id);
+                    localStorage.setItem("holiday_email", event.data.email);
+                } 
+                // เมื่อรับคำสั่งออกจากระบบ
+                else if (event.data.action === "logout") {
+                    localStorage.removeItem("holiday_name");
+                    localStorage.removeItem("holiday_id");
+                    localStorage.removeItem("holiday_email");
+                    loadApp(); // รีเฟรช iframe ใหม่
+                }
+            }
+        });
+    </script>
 </body>
 </html>
